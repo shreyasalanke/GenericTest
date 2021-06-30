@@ -1,23 +1,30 @@
 package com.bridgelabz;
-import java.lang.Math;
-import java.util.Scanner;
+
 public class PrintMaxNumber {
 
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Please input 3 integers: ");
-        int x = Integer.parseInt(sc.nextLine());
-        int y = Integer.parseInt(sc.nextLine());
-        int z = Integer.parseInt(sc.nextLine());
-        int max = Math.max(x,y);
-        if(max>y)
-        {
-            max = Math.max(x,z);    
-        }
-        else{ 
-            max = Math.max(y,z);    
-        }
-        System.out.println("The max of three is: " + max);
-    }
-} 
+   
+    	    Integer num1=1,num2=2,num3=3;
+	        Float Num1=1.11f,Num2=2.2f,Num3=3.3f;
+	        
+	    
+	    
+		    public static <T extends Comparable<T>> T maximum(T x, T y, T z) 
+		    {
+		        T max = x;
+
+		        if (y.compareTo(max) > 0)
+		          max = y; 
+
+		        if (z.compareTo(max) > 0)
+		          max = z; 
+
+		        return max;
+		    }
+
+		    public static void main(String args[]) {
+		        System.out.printf("Maximum of %d, %d and %d is %d\n\n", 3, 4, 5, maximum(3, 4, 5));
+		        System.out.printf("Maximum of %.1f, %.1f and %.1f is %.1f\n\n", 6.6, 8.8, 7.7, maximum(6.6,
+		                8.8, 7.7));
+		    }
+}
