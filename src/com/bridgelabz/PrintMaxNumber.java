@@ -1,10 +1,30 @@
 package com.bridgelabz;
 
-public class PrintMaxNumber
-{
+public class PrintMaxNumber {
 
-   public static void main(String[] args)
-   {
-	   System.out.println("welcome to test max of 3 number using generic");
-     }
- }
+
+   
+    	    Integer num1=1,num2=2,num3=3;
+	        Float Num1=1.11f,Num2=2.2f,Num3=3.3f;
+	        
+	    
+	    
+		    public static <T extends Comparable<T>> T maximum(T x, T y, T z) 
+		    {
+		        T max = x;
+
+		        if (y.compareTo(max) > 0)
+		          max = y; 
+
+		        if (z.compareTo(max) > 0)
+		          max = z; 
+
+		        return max;
+		    }
+
+		    public static void main(String args[]) {
+		        System.out.printf("Maximum of %d, %d and %d is %d\n\n", 3, 4, 5, maximum(3, 4, 5));
+		        System.out.printf("Maximum of %.1f, %.1f and %.1f is %.1f\n\n", 6.6, 8.8, 7.7, maximum(6.6,
+		                8.8, 7.7));
+		    }
+}
